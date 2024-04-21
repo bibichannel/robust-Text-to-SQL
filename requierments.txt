@@ -1,0 +1,8 @@
+boto3
+langchain
+langchain-community
+langchain-openai
+streamlit 
+pymongo
+BeautifulSoup4
+sentence-transformers
