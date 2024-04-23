@@ -1,2 +1,3 @@
 venv/
 params.py
+__pycache__/

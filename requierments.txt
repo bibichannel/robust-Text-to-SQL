@@ -6,3 +6,4 @@ streamlit
 pymongo
 BeautifulSoup4
 sentence-transformers
+langchain-aws

@@ -66,36 +66,36 @@ class ImpactAthena:
 ### Example
 # if __name__ == "__main__":
     
-    ### -------------------Create OBJ of ImpactAthena Class
+#     ### -------------------Create OBJ of ImpactAthena Class
     
-    # obj_athena = ImpactAthena(
-    #     catalog_name=params.catalog_name,
-    #     database_name=params.database_name,
-    #     table_name=params.table_name
-    #     )
+#     obj_athena = ImpactAthena(
+#         catalog_name=params.catalog_name,
+#         database_name=params.database_name,
+#         table_name=params.table_name
+#         )
     
-    ### -------------------Show metadata table
+#     ## -------------------Show metadata table
     
-    # print(json.dumps(obj_athena.get_table_metadata(), indent=2))
+#     print(json.dumps(obj_athena.get_table_metadata(), indent=2))
     
     
-    ### -------------------SQL Query Athena 
+#     ## -------------------SQL Query Athena 
     
-    # query_str = '''
-    # SELECT
-    # "candidate.contact.name" AS name,
-    # "candidate.skills.technical" AS technical,
-    # "candidate.skills.non-technicals" AS nonTechnical
-    # FROM "customer_resume"."candidates"
-    # '''
+#     query_str = '''
+#     SELECT
+#     "candidate.contact.name" AS name,
+#     "candidate.skills.technical" AS technical,
+#     "candidate.skills.non-technicals" AS nonTechnical
+#     FROM "customer_resume"."candidates"
+#     '''
     
-    # execution_id = obj_athena.query(query_str)
-    # print(f"Execution id: {execution_id}")
+#     execution_id = obj_athena.query(query_str)
+#     print(f"Execution id: {execution_id}")
 
-    # query_status = obj_athena.has_query_succeeded(execution_id=execution_id)
-    # print(f"Query state: {query_status}")
+#     query_status = obj_athena.has_query_succeeded(execution_id=execution_id)
+#     print(f"Query state: {query_status}")
 
-    # if query_status:
-    #     print(obj_athena.get_query_results(execution_id=execution_id))
-    # else:
-    #     print(obj_athena.get_query_error_message(execution_id))
+#     if query_status:
+#         print(obj_athena.get_query_results(execution_id=execution_id))
+#     else:
+#         print(obj_athena.get_query_error_message(execution_id))

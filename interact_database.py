@@ -48,13 +48,14 @@ class InteractDatabase:
         return list(cursor)
 
 
-if __name__ == "__main__":
-    obj_database = InteractDatabase(
-        connect_string=params.mongodb_connect_string,
-        database_name=params.mongodb_database_name,
-        collection_name=params.collection_name
-    )
-    results = obj_database.similary_search("The cook prepared a meal of poultry and veggies.")
-    for item in results:
-        print(item)
-        print("\n\n---------------------\n")
+### Example  
+# if __name__ == "__main__":
+#     obj_database = InteractDatabase(
+#         connect_string=params.mongodb_connect_string,
+#         database_name=params.mongodb_database_name,
+#         collection_name=params.collection_name
+#     )
+#     results = obj_database.similary_search("The cook prepared a meal of poultry and veggies.")
+#     for item in results:
+#         print(item)
+#         print("\n\n---------------------\n")

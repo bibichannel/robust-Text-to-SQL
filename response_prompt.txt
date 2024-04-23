@@ -1,0 +1,41 @@
+
+I will provide you the schema of the "candidates" table in "customer_resume".
+Please use the information in this schema to process my request below:
+
+[{'Name': 'candidate.contact.name', 'Type': 'string'}, {'Name': 'candidate.contact.email', 'Type': 'string'}, {'Name': 'candidate.contact.phone', 'Type': 'string'}, {'Name': 'candidate.contact.address', 'Type': 'string'}, {'Name': 'candidate.skills.technical', 'Type': 'array<string>'}, {'Name': 'candidate.skills.non-technical', 'Type': 'array<string>'}, {'Name': 'candidate.skills.other', 'Type': 'string'}, {'Name': 'candidate.education.degree', 'Type': 'string'}, {'Name': 'candidate.education.gpa', 'Type': 'string'}, {'Name': 'candidate.education.university', 'Type': 'string'}, {'Name': 'candidate.education.year', 'Type': 'string'}, {'Name': 'candidate.education.other', 'Type': 'string'}, {'Name': 'candidate.projects', 'Type': 'array<struct<Name:string,Role:string,Duration:string,Other:string>>'}, {'Name': 'candidate.work_experience#0', 'Type': 'array<struct<Company:string,Duration:string,Role:string,Other:string>>'}]
+
+It is important that the SQL query complies with Athena syntax. 
+Remember to enclose Name as a string data type in quotes.
+During join, in select statement. It is also important to respect the type of columns: 
+If you are writing CTEs then include all the required columns. 
+While concatenating a non string column, make sure cast the column to string. 
+For date columns comparing to string , please cast the string input.
+Use the requirements and information provided to create an SQL query on the athena table. 
+The returned results only contain the query content, no further explanation.
+
+Requirements: Statistics to see which candidate has the most skills and show the skills.
+
+
+
+I will provide you the schema of the "candidates" table in "customer_resume".
+Please use the information in this schema to process my request below:
+
+[{'Name': 'candidate.contact.name', 'Type': 'string'}, {'Name': 'candidate.contact.email', 'Type': 'string'}, {'Name': 'candidate.contact.phone', 'Type': 'string'}, {'Name': 'candidate.contact.address', 'Type': 'string'}, {'Name': 'candidate.skills.technical', 'Type': 'array<string>'}, {'Name': 'candidate.skills.non-technical', 'Type': 'array<string>'}, {'Name': 'candidate.skills.other', 'Type': 'string'}, {'Name': 'candidate.education.degree', 'Type': 'string'}, {'Name': 'candidate.education.gpa', 'Type': 'string'}, {'Name': 'candidate.education.university', 'Type': 'string'}, {'Name': 'candidate.education.year', 'Type': 'string'}, {'Name': 'candidate.education.other', 'Type': 'string'}, {'Name': 'candidate.projects', 'Type': 'array<struct<Name:string,Role:string,Duration:string,Other:string>>'}, {'Name': 'candidate.work_experience#0', 'Type': 'array<struct<Company:string,Duration:string,Role:string,Other:string>>'}]
+
+It is important that the SQL query complies with Athena syntax. 
+Remember to enclose Name as a string data type in quotes.
+During join, in select statement. It is also important to respect the type of columns: 
+If you are writing CTEs then include all the required columns. 
+While concatenating a non string column, make sure cast the column to string. 
+For date columns comparing to string , please cast the string input.
+Use the requirements and information provided to create an SQL query on the athena table. 
+The returned results only contain the query content, no further explanation.
+
+Requirements: Statistics to see which candidate has the most skills and show the skills.
+This is syntax error: AMBIGUOUS_NAME: line 1:224: Column 'candidate.contact.name' is ambiguous.
+            To correct this, please generate an alternative SQL query which will correct the syntax error. 
+            The updated query should take care of all the syntax issues encountered. Follow the instructions mentioned above to remediate the error.
+            Update the below SQL query to resolve the issue:
+             WITH skills_count AS (   SELECT      "candidate.contact.name",     cardinality("candidate.skills.technical") + cardinality("candidate.skills.non-technical") AS total_skills   FROM "customer_resume"."candidates" ) SELECT    "candidate.contact.name",    "candidate.skills.technical",   "candidate.skills.non-technical" FROM "customer_resume"."candidates"  INNER JOIN skills_count ON "customer_resume"."candidates"."candidate.contact.name" = skills_count."candidate.contact.name" ORDER BY skills_count.total_skills DESC LIMIT 1
+            Make sure the updated SQL query aligns with the requirements provided in the initial question.
+
